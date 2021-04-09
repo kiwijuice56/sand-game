@@ -25,12 +25,12 @@ public class GameGraphics extends JPanel {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        for (int y = 0; y < h; y++){
-            for (int x = 0; x < w; x++){
+        for (int y = h-1; y >= 0; y--){
+            for (int x = w-1; x >= 0; x--){
                 if (grid[y][x] != null)
                     image.setRGB(x, y, grid[y][x].getColor());
                 else
-                    image.setRGB(x, y, 0);
+                    image.setRGB(x, y, ConfigReader.getOption("bgColor"));
             }
         }
         g.drawImage(image, 0, 0, null);

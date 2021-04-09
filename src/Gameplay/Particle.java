@@ -1,18 +1,14 @@
 package Gameplay;
-
+/*
+    Individual particle
+*/
 public class Particle {
-    private int color = 0;
-    private boolean moved = false;
+    private int color;
     public Particle(int color){
         this.color = color;
     }
     public int getColor(){
         return color;
     }
-    public void setMoved(boolean moved){
-        this.moved = moved;
-    }
-    public boolean getMoved(){
-        return moved;
-    }
+
 }

@@ -16,29 +16,27 @@ public class PhysicsEngine {
         grid = new Particle[h][w];
     }
 
+    public Particle[][] getGrid(){
+        return grid;
+    }
+
     public void addParticle(int x, int y){
         int size = ConfigReader.getOption("brushSize");
         int color = new Random().nextInt();
         for (int i = Math.max(0, y-(size/2)); i < Math.min(h, y+(size/2)); i++){
             for (int j = Math.max(0, x-(size/2)); j < Math.min(w, x+(size/2)); j++){
-                if (grid[i][j] == null){
+                if (grid[i][j] == null)
                     grid[i][j] = new Particle(color);
-                }
             }
         }
 
     }
     public void calculatePositions(){
-        for (int y = 0; y < h; y++) {
-            for (int x = 0; x < w; x++) {
+        for (int y = h-1; y >= 0; y--){
+            for (int x = w-1; x >= 0; x--){
                 Particle p = grid[y][x];
                 if (p == null)
                     continue;
-                if (p.getMoved()){
-                    p.setMoved(false);
-                    continue;
-                }
-
                 if (y+1 < h) {
                     if (grid[y+1][x] == null)
                         grid[y+1][x] = p;
@@ -49,15 +47,8 @@ public class PhysicsEngine {
                     else
                         continue;
                     grid[y][x] = null;
-                    p.setMoved(true);
                 }
             }
         }
-    }
-    public Particle[][] getGrid(){
-        return grid;
-    }
-    public void setGrid(int x, int y, Particle p){
-        grid[y][x] = p;
     }
 }

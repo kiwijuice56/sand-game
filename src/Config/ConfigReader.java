@@ -11,7 +11,6 @@ import java.io.FileNotFoundException;
 public class ConfigReader {
     private static HashMap<String, Integer> options = new HashMap<String, Integer>();
 
-    // Updates options HashMap with options written in config.txt
     public static void readConfig(){
         try {
             Scanner s = new Scanner(new File("src/config.txt"));
@@ -25,7 +24,6 @@ public class ConfigReader {
         }
     }
 
-    // Set and get
     public static int getOption(String key){
         return options.get(key);
     }

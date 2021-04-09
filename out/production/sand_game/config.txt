@@ -1,3 +1,5 @@
 width = 500
 height = 300
+guiPadding = 100
 brushSize = 10
+bgColor = 0
