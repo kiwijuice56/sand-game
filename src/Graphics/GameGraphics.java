@@ -3,7 +3,7 @@ package Graphics;
     Updates image of gameplay, ie. draws the particles
 */
 import Config.ConfigReader;
-import Gameplay.Particle;
+import Gameplay.Particles.Particle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,8 +12,8 @@ import java.awt.image.BufferedImage;
 public class GameGraphics extends JPanel {
     private BufferedImage image;
     private Particle[][] grid;
-    int w;
-    int h;
+    private int w;
+    private int h;
 
     public GameGraphics(Particle[][] grid){
         this.grid = grid;

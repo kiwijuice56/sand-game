@@ -19,7 +19,8 @@ public class MouseInput implements MouseListener{
     public void mousePressed(MouseEvent e){
         physicsEngine.addParticle(e.getX(), e.getY());
     }
-    public void mouseReleased(MouseEvent e){ }
+    public void mouseReleased(MouseEvent e){
+    }
     public void mouseEntered(MouseEvent e){ }
     public void mouseExited(MouseEvent e){ }
 }

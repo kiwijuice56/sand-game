@@ -14,7 +14,7 @@ public class Main{
         MouseInput mouseInput = new MouseInput(physicsEngine);
         GameGraphics gameGraphics = new GameGraphics(physicsEngine.getGrid());
 
-        GameFrame.createFrame(gameGraphics, mouseInput);
+        GameFrame.createFrame(physicsEngine, gameGraphics, mouseInput);
 
         // Main loop
         // TODO: implement delta
