@@ -1,5 +1,5 @@
-width = 500
-height = 300
+width = 600
+height = 400
 guiPadding = 100
-brushSize = 10
+brushSize = 12
 bgColor = 0

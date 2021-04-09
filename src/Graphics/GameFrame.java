@@ -26,9 +26,8 @@ public class GameFrame {
         // Initializing input
         gameGraphics.addMouseListener(mouseInput);
 
-        // TODO: Buttons for different particles
         JPanel buttons = new JPanel();
-        String[] particleTypes = {"Sand", "Stone"};
+        String[] particleTypes = {"Sand", "Stone", "Eraser"};
         for (String particleType : particleTypes) {
             JButton button = new JButton(particleType);
             button.addActionListener(new ButtonInput(physicsEngine, particleType));

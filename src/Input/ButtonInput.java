@@ -13,6 +13,7 @@ public class ButtonInput implements ActionListener {
     private String particleType;
 
     public ButtonInput(PhysicsEngine physicsEngine, String particleType){
+        super();
         this.physicsEngine = physicsEngine;
         this.particleType = particleType;
     }

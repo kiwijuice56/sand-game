@@ -22,6 +22,7 @@ public class PhysicsEngine {
         switch(particleType){
             case "Sand": currentParticle = new Sand(); break;
             case "Stone": currentParticle = new Stone(); break;
+            case "Eraser": currentParticle = null;
         }
     }
 
@@ -30,7 +31,9 @@ public class PhysicsEngine {
         int color = new Random().nextInt();
         for (int i = Math.max(0, y-(size/2)); i < Math.min(h, y+(size/2)); i++){
             for (int j = Math.max(0, x-(size/2)); j < Math.min(w, x+(size/2)); j++){
-                if (grid[i][j] == null) {
+                if (currentParticle == null)
+                    grid[i][j] = null;
+                if (grid[i][j] == null){
                     try { grid[i][j] = currentParticle.getClass().newInstance();
                     }catch(Exception e){ }
                 }
